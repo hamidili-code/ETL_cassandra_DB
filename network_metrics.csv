@@ -1,0 +1,6 @@
+resource,metric_name,collected_at,value
+Network,Packets Dropped,2018-12-16 22:25:00,1532345
+Network,Packets Received,2018-12-16 22:26:00,1532450
+Network,Packets Sent,2018-12-16 22:27:00,1532600
+Router-01,CPU Usage,2018-12-16 22:28:00,72
+Router-01,Memory Usage,2018-12-16 22:29:00,64
