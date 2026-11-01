@@ -231,3 +231,5 @@ Run current file
 Esc, :!python3 %
 Check syntax
 python -m py_compile ETL.py
+15. Summary
+The pipeline was redesigned from a single-table prototype into a query-driven Cassandra model: one table for time-range reads (Q1) bucketed by day, and one lookup table for listing a resource's metrics (Q2). The code now transforms real project data (date-time strings and numeric values) into proper Cassandra types, applies a one-year TTL, writes to both tables concurrently, validates identifiers, and always closes the cluster connection. Remaining work is the configuration file, live-cluster testing, and documenting the actual query results.
