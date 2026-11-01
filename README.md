@@ -1,5 +1,6 @@
 Network Monitoring ETL System – Comprehensive Work Report
-Revision of the CSV → Apache Cassandra ETL pipeline: problems found, design decisions, and the resulting implementation.
+
+
 1. Project Overview
 This project is an ETL (Extract, Transform, Load) pipeline for network-monitoring measurements. It reads a CSV file of metrics collected from network resources (routers, switches, firewalls, etc.), validates and converts the data in Python, and loads it into Apache Cassandra. The data is stored so that two specific questions can be answered efficiently:
 • Q1: What values did a given metric of a given resource take within a given time range?
