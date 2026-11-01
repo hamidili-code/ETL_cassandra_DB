@@ -1,0 +1,19 @@
+# ETL.py configuration
+
+# --- common ---------------------------------------------------------------
+hosts: "127.0.0.1"          # comma-separated contact points, e.g. "10.0.0.1,10.0.0.2"
+command: load               # load | q1 | q2
+keyspace: network_monitoring
+table: metrics
+
+# --- load -----------------------------------------------------------------
+csv_file: network_metrics.csv
+ttl: 31536000               # seconds (365 days)
+create_schema: false        # true = create both tables if missing
+
+# --- q1 / q2 --------------------------------------------------------------
+resource: Router-01         # q1, q2
+metric: CPU Usage           # q1 only
+# Keep quotes: without them YAML turns these into datetime objects.
+start: "2018-12-16 00:00"   # q1 only, UTC, inclusive  (YYYY-MM-DD HH:MM)
+end: "2018-12-23 00:00"     # q1 only, UTC, exclusive
